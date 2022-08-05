@@ -7,11 +7,13 @@
                     type="text" 
                     class="input_text"
                     placeholder="Username"
+                    :class="{'error-input': submitted && username === ''}"
                     v-model="username"
                 />
                 <input 
                     type="password" 
                     class="input_text"
+                    :class="{'error-input': submitted && password === ''}"
                     placeholder="Password"
                     v-model="password"
                 />
@@ -23,6 +25,15 @@
                     <span class="material-symbols-outlined icon">arrow_forward</span>
                 </button>
             </form>
+            <div v-if="alert.message" :class="`alert ${alert.type}`">
+                <span class="material-symbols-outlined icon">
+                    error
+                </span>
+                <div>
+                    <b>Error</b><br>
+                    {{ alert.message }}
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -40,7 +51,7 @@ export default {
         }
     },
     computed: {
-        ...mapState('account', ['status'])
+        ...mapState(['alert'])
     },
     created () {
         // reset login status

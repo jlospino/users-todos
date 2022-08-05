@@ -19,7 +19,6 @@ const actions = {
                     router.push({ path:'/users' });
                 },
                 error => {
-                    console.log("Error Login: ", error)
                     commit('loginFailure', error);
                     dispatch('alert/error', error, { root: true });
                 }

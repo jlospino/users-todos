@@ -33,8 +33,6 @@ export function configureFakeBackend() {
                         return user.username === params.username && user.password === params.password;
                     });
 
-                    console.log(opts)
-
                     if (filteredUsers.length) {
                         // if login details are valid return user details and fake jwt token
                         let user = filteredUsers[0];

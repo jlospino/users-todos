@@ -30,8 +30,7 @@ export default {
   },
   mounted () {
     this.$parent.$on('toggleNav', () => {
-      this.active = !this.active;
-      this.marginLeft = this.active ? '20%' : '0px'
+      //this.active = !this.active;
     })
   }
 }

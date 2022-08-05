@@ -30,10 +30,7 @@ export default {
         breadcum: String
     },
     computed: {
-        ...mapState('account', ['status']),
-        user () {
-            return this.$store.state.account.user
-        }
+        ...mapState('account', ['user']),
     },
     methods: {
         ...mapActions('account', ['logout']),
