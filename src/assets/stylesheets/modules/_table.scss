@@ -1,0 +1,31 @@
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    tr{
+        th{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: #9B9EAC;
+            text-align: left;
+            padding: 24px 12px;
+        }
+        td{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: #20253A;
+            text-align: left;
+            padding: 24px 12px;
+        }
+    }
+    tr:nth-child(even) {
+        background: #F5F6FA;
+        mix-blend-mode: normal;
+    }
+}
