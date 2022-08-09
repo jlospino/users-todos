@@ -82,4 +82,8 @@
     &:disabled{
         background-color: #0055fe7d;
     }
+    @media screen and (max-width: 700px) {
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
 }

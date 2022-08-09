@@ -1,6 +1,6 @@
 <template>
   <!-- The sidebar -->
-  <div class="sidebar" :class="{ active: active}">
+  <div class="sidebar" :class="{ active: active}" v-if="!collapse">
     <router-link to="/">
       <span class="text_title">
         System
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: "SidebarMenu",
   data () {
@@ -28,11 +30,9 @@ export default {
       marginLeft: '20%'
     }
   },
-  mounted () {
-    this.$parent.$on('toggleNav', () => {
-      //this.active = !this.active;
-    })
-  }
+  computed: {
+    ...mapState('navigation', ['collapse']),
+  },
 }
 </script>
 <style lang="scss">

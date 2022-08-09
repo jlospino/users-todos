@@ -12,8 +12,8 @@
     background: #FFFFFF;
     box-shadow: 4px 0px 4px rgba(43, 45, 55, 0.01);
     z-index: 1;
-    -webkit-animation: animateleft 0.4s;
-    animation: animateleft 0.4s;
+    -webkit-animation: all 0.4s ease;
+    transition: all 0.4s ease;
     &.active{
       display: block;
     }
@@ -42,12 +42,6 @@
     }
   }
 
-  /* Active/current link */
-  /*.sidebar a.active {
-    background-color: #3B5CE7;
-    color: white;
-  }*/
-
   /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
     /*background-color: #555;*/
@@ -60,6 +54,11 @@
     padding-left: 35px;
     padding-right: 35px;
     height: 100%;
+    @media screen and (max-width: 700px) {
+      margin: 0px !important;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   /* On screens that are less than 700px wide, make the sidebar into a topbar */

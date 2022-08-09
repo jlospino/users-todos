@@ -8,7 +8,7 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     overflow: visible;
-    width: 89%;
+    width: calc(100% - 40px);
     font-size: 1rem;
     margin-bottom: 10px;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;

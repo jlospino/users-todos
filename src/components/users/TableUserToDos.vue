@@ -1,9 +1,7 @@
 <template>
     <div class="todos-list">
         <div class="task-input">
-            <span class="material-symbols-outlined task-input-icon">
-                splitscreen
-            </span>
+            <span class="material-symbols-outlined task-input-icon">splitscreen</span>
             <input 
                 type="text" 
                 v-model="todo" 
@@ -39,7 +37,7 @@
                     Completed
                 </span>
             </div> 
-            <span class="rigth">({{ todos_filter.length }}) Results</span>
+            <span class="rigth results_count">({{ todos_filter.length }}) Results</span>
         </div>
         <ul class="task-box">
             <li class="task" v-for="(todo, index) in todos_filter" :key="index">
@@ -95,7 +93,8 @@ export default {
                 });
             }            
         },
-        filterToDos(state){
+        async filterToDos(state){
+            await this.getUserToDos();
             this.filter = state;
             if(state === 'all'){
                 this.todos_filter = this.todos;
@@ -126,7 +125,7 @@ export default {
             localStorage.setItem(`todos_${this.userId}`, JSON.stringify(todosFilter));
             this.getUserToDos();
         },
-        completeToDo(todo){
+        async completeToDo(todo){
             const todosComplete = this.todos.map(item => {
                 if(item.id == todo.id){
                     return {...todo, completed: !item.completed};
@@ -135,7 +134,8 @@ export default {
                 }
             });
             localStorage.setItem(`todos_${this.userId}`, JSON.stringify(todosComplete));
-            this.getUserToDos();
+            
+            setTimeout(() => this.filterToDos( this.filter ), 200 );
         }
     }
 }

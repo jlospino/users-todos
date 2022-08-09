@@ -1,7 +1,7 @@
 <template>
     <header class="navbar">
         <div class="navbar_contain">
-            <button class="navbar_item" @click="toggleNav()">
+            <button class="navbar_item toggle_button" @click="toggleNav()">
                 <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 6.5H15" stroke="#A0A5BA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M0 1.5H15" stroke="#A0A5BA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -31,11 +31,14 @@ export default {
     },
     computed: {
         ...mapState('account', ['user']),
+        ...mapState('navigation', ['collapse']),
     },
     methods: {
         ...mapActions('account', ['logout']),
+        ...mapActions('navigation', ['collapseMenu']),
         toggleNav () {
-            this.$parent.$emit('toggleNav')
+            const { collapse } = this;
+            this.collapseMenu({ collapse });
         }
     }
 }

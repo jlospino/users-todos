@@ -6,7 +6,7 @@ const users_fakes = [
         password: '12345',
         firstName: 'Jose Luis',
         lastName: 'Ospino Cueva',
-        photo: 'https://avataaars.io/?avatarStyle=Circle'
+        photo: 'https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Default&skinColor=Brown'
     }
 ]
 

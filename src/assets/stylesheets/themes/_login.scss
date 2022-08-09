@@ -12,6 +12,10 @@
         position: relative;
         margin: 0 auto;
         margin-top: 20vh;
+        @media screen and (max-width: 700px) {
+            width: calc(100% - 70px);
+            position: relative;
+          }
 
         .login_card__header{
             color: #20253A;

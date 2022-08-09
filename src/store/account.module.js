@@ -24,8 +24,8 @@ const actions = {
                 }
             );
     },
-    logout({ commit }) {
-        userService.logout();
+    async logout({ commit }) {
+        await userService.logout();
         commit('logout');
         router.push({ path:'/login' });
     },
