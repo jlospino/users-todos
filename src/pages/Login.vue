@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="login_card">
-            <h3 class="login_card__header">Login to your account</h3>
+            <h3 class="login_card__header">Access your account</h3>
             <form @submit.prevent="handleSubmit">
                 <input 
                     type="text" 

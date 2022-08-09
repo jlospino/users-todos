@@ -115,7 +115,7 @@ export default {
             const newsTodos = [...JSON.parse(localStorage.getItem(`todos_${this.userId}`)), newTodo];
             localStorage.setItem(`todos_${this.userId}`, JSON.stringify(newsTodos));
             this.todo = '';
-            this.getUserToDos();
+            this.filterToDos(this.filter);
         },
         removeToDo(id){
             // Add others todo's with a different id
@@ -123,7 +123,7 @@ export default {
                 return item.id !== id;
             });
             localStorage.setItem(`todos_${this.userId}`, JSON.stringify(todosFilter));
-            this.getUserToDos();
+            this.filterToDos(this.filter);
         },
         async completeToDo(todo){
             const todosComplete = this.todos.map(item => {
